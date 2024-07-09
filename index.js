@@ -57,7 +57,7 @@ async function getWeatherForecast(cityValue) {
     // Filtrer les prévisions pour les prochains 7 jours
     const weeklyForecast = data.list.filter((forecast) => {
       // On prend une seule prévision par jour, par exemple à midi
-      return forecast.dt_txt.includes('12:00:00');
+      return forecast.dt_txt.includes('00:00:00');
     }).map((forecast) => {
       return {
         date: new Date(forecast.dt * 1000), // Convertir la timestamp UNIX en objet Date
